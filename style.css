@@ -220,27 +220,27 @@ section .title::after{
 .about .about-content .right{
     width: 40%;
 }
-.about .about-content .right img{
+.about .about-content .column-right img{
     height: 500px;
     width: 400px;
     object-fit: cover;
     border-radius: 6px;
 }
-.about .about-content .left{
+.about .about-content .column-left{
     width: 50%;
 }
-.about .about-content .left .text{
+.about .about-content .column-left .text{
     font-size: 25px;
     font-weight: 600;
     margin-bottom: 10px;
 }
-.about .about-content .left .text span{
+.about .about-content .column-left .text span{
     color: crimson;
 }
-.about .about-content .left p{
+.about .about-content .column-left p{
     text-align:justify;
 }
-.about .about-content .left a{
+.about .about-content .column-left a{
     display: inline-block;
     background: crimson;
     color: skyblue;
@@ -252,9 +252,13 @@ section .title::after{
     border: 2px solid crimson;
     transition: all 0.3s ease;
 }
-.about .about-content .left a:hover{
+.about .about-content .column-left a:hover{
     color: crimson;
     background: none;
+}
+.resume{
+    display:flex;
+    padding: 5px;
 }
 
 /* skills section styling */
@@ -434,10 +438,11 @@ footer span a:hover{
 
 /* responsive media query start */
 @media (max-width: 1104px) {
-    .about .about-content .left img{
-        height: 350px;
+    .about .about-content .column-right{
+        height: 400px;
         width: 350px;
     }
+    
 }
 
 @media (max-width: 991px) {
@@ -448,7 +453,7 @@ footer span a:hover{
 @media (max-width: 947px){
     .menu-btn{
         display: block;
-        z-index: 999;
+        z-index: 899;
     }
     .menu-btn i.active:before{
         content: "\f00d";
@@ -464,6 +469,7 @@ footer span a:hover{
         padding-top: 80px;
         transition: all 0.3s ease;
     }
+  
     .navbar .menu.active{
         left: 0;
     }
@@ -488,16 +494,20 @@ footer span a:hover{
     .max-width{
         max-width: 930px;
     }
-    .about .about-content .column{
+    .about .about-content{
         width: 100%;
     }
-    .about .about-content .left{
-        display: flex;
+    .about .about-content .column-left{
+        width: 80%;
+        display:block;
         justify-content: center;
         margin: 0 auto 60px;
     }
-    .about .about-content .right{
-        flex: 100%;
+    .about .about-content .column-right img{
+        /* flex: 100%; */
+        width: 350px;
+        margin: 0 auto 60px;
+
     }
     .services .serv-content .card{
         width: calc(50% - 10px);
@@ -526,6 +536,7 @@ footer span a:hover{
     .services .serv-content .card{
         width: 100%;
     }
+    
 }
 
 @media (max-width: 500px) {
@@ -535,7 +546,7 @@ footer span a:hover{
     .home .home-content .text-3{
         font-size: 27px;
     }
-    .about .about-content .right .text,
+    .about .about-content .column-right .text,
     .skills .skills-content .left .text{
         font-size: 19px;
     }
